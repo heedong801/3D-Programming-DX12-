@@ -1,0 +1,52 @@
+int count = 0;
+
+		if (dwDirection & DIR_FORWARD)
+		{
+			count++;
+			if (count)
+				xmf3Shift = Vector3::Add(xmf3Shift, m_xmf3Look, fDistance/2);
+			else
+				xmf3Shift = Vector3::Add(xmf3Shift, m_xmf3Look, fDistance);
+		}
+		if (dwDirection & DIR_BACKWARD)
+		{
+			count++;
+			if (count)
+				xmf3Shift = Vector3::Add(xmf3Shift, m_xmf3Look, -fDistance / 2);
+			else
+				xmf3Shift = Vector3::Add(xmf3Shift, m_xmf3Look, -fDistance);
+		}
+		if (dwDirection & DIR_RIGHT)
+		{
+			count++;
+			if (count)
+				xmf3Shift = Vector3::Add(xmf3Shift, m_xmf3Right, fDistance / 2);
+			else
+				xmf3Shift = Vector3::Add(xmf3Shift, m_xmf3Right, fDistance);
+		}
+		if (dwDirection & DIR_LEFT)
+		{
+			count++;
+			if (count)
+				xmf3Shift = Vector3::Add(xmf3Shift, m_xmf3Right, -fDistance / 2);
+			else
+				xmf3Shift = Vector3::Add(xmf3Shift, m_xmf3Right, -fDistance);
+		}
+		if (dwDirection & DIR_UP)
+		{
+			count++;
+			if (count)
+				xmf3Shift = Vector3::Add(xmf3Shift, m_xmf3Up, fDistance / 2);
+			else
+				xmf3Shift = Vector3::Add(xmf3Shift, m_xmf3Up, fDistance);
+		}
+		if (dwDirection & DIR_DOWN)
+		{
+			count++;
+			if (count)
+				xmf3Shift = Vector3::Add(xmf3Shift, m_xmf3Up, -fDistance / 2);
+			else
+				xmf3Shift = Vector3::Add(xmf3Shift, m_xmf3Up, -fDistance);
+		}
+
+		Move(xmf3Shift, true);

@@ -1,0 +1,10 @@
+if (fLockFPS > 0.0f)
+    {	//??
+        while (fTimeElapsed < (1.0f / fLockFPS))
+        {
+	        ::QueryPerformanceCounter((LARGE_INTEGER *)&m_nCurrentPerformanceCounter);
+	        fTimeElapsed = float((m_nCurrentPerformanceCounter - m_nLastPerformanceCounter) * m_fTimeScale);
+        }
+    } 
+
+m_xmf4x4World = Matrix4x4::Multiply(XMMatrixRotationRollPitchYaw(XMConvertToRadians(90.0f), 0.0f, 0.0f), m_xmf4x4World);

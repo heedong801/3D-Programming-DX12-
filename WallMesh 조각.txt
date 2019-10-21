@@ -1,0 +1,80 @@
+int nSubRects = 10;
+
+	float fWidth = 300;
+	float fHeight = 300;
+	float fDepth = 1000;
+
+	float fHalfWidth = fWidth * 0.5f;
+	float fHalfHeight = fHeight * 0.5f;
+	float fHalfDepth = fDepth * 0.5f;
+
+	float fCellWidth = fWidth * (1.0f / nSubRects);
+	float fCellHeight = fHeight * (1.0f / nSubRects);
+	float fCellDepth = fDepth * (1.0f / nSubRects);
+
+	CWallMesh *pCubeMeshSide = new CWallMesh(pd3dDevice, pd3dCommandList, 0, fHeight, fDepth, nSubRects);
+	CWallMesh *pCubeMeshTopboT = new CWallMesh(pd3dDevice, pd3dCommandList, fWidth, 0, fDepth, nSubRects);
+	
+	m_nObjects = 400;
+	m_ppWalls = new CWallsObject*[m_nObjects];
+
+	CWallsObject *pCWallObject = NULL;
+
+	int k = 0;
+	//Left
+	for (int i = 0; i < nSubRects; i++)
+	{
+		for (int j = 0; j < nSubRects; j++)
+		{
+			pCWallObject = new CWallsObject();
+			pCWallObject->SetMesh(pCubeMeshSide);
+
+			pCWallObject->SetPosition(-fHalfWidth, -fHalfHeight + ((i*fCellHeight) + (i + 1)*fCellHeight) / 2.0f, -fHalfDepth + ((j*fCellDepth) + (j + 1)*fCellDepth) / 2.0f);
+			pCWallObject->m_pxmf4WallPlanes = XMFLOAT4(+1.0f, 0.0f, 0.0f, fHalfWidth);
+			m_ppWalls[k++] = pCWallObject;
+		}
+	}
+	
+
+	//Right
+	for (int i = 0; i < nSubRects; i++)
+	{
+		for (int j = 0; j < nSubRects; j++)
+		{
+			pCWallObject = new CWallsObject();
+			pCWallObject->SetMesh(pCubeMeshSide);
+
+			pCWallObject->SetPosition(fHalfWidth, -fHalfHeight + ((i*fCellHeight) + (i + 1)*fCellHeight) / 2.0f, -fHalfDepth + ((j*fCellDepth) + (j + 1)*fCellDepth) / 2.0f);
+			pCWallObject->m_pxmf4WallPlanes = XMFLOAT4(-1.0f, 0.0f, 0.0f, fHalfWidth);
+			m_ppWalls[k++] = pCWallObject;
+		}
+	}
+	//Top
+	for (int i = 0; i < nSubRects; i++)
+	{
+		for (int j = 0; j < nSubRects; j++)
+		{
+			pCWallObject = new CWallsObject();
+			pCWallObject->SetMesh(pCubeMeshTopboT);
+
+			pCWallObject->SetPosition(-fHalfWidth + ((i*fCellWidth) + (i + 1)*fCellWidth) / 2.0f, -fHalfHeight, -fHalfDepth + ((j*fCellDepth) + (j + 1)*fCellDepth) / 2.0f);
+			pCWallObject->m_pxmf4WallPlanes = XMFLOAT4(0.0f, -1.0f, 0.0f, fHalfHeight);
+			m_ppWalls[k++] = pCWallObject;
+		}
+	}
+	//Bottom
+	for (int i = 0; i < nSubRects; i++)
+	{
+		for (int j = 0; j < nSubRects; j++)
+		{
+			pCWallObject = new CWallsObject();
+			pCWallObject->SetMesh(pCubeMeshTopboT);
+
+			pCWallObject->SetPosition(-fHalfWidth + ((i*fCellWidth) + (i + 1)*fCellWidth) / 2.0f, fHalfHeight, -fHalfDepth + ((j*fCellDepth) + (j + 1)*fCellDepth) / 2.0f);
+			pCWallObject->m_pxmf4WallPlanes = XMFLOAT4(0.0f, +1.0f, 0.0f, fHalfHeight);
+			m_ppWalls[k++] = pCWallObject;
+		}
+	}
+
+	CCubeMeshDiffused *pCubeMesh = new CCubeMeshDiffused(pd3dDevice, pd3dCommandList, fWidth, fHeight, fDepth);
+	pCubeMesh->SetOOBB(XMFLOAT3(0.0f, 0.0f, 0.0f), XMFLOAT3(fHalfWidth, fHalfHeight, fHalfDepth), XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f));

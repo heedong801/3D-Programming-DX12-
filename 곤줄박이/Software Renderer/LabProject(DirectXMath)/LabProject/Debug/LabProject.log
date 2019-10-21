@@ -1,0 +1,9 @@
+﻿  GameFramework.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  GameObject.cpp
+  코드를 생성하고 있습니다...
+  건너뛰고 있습니다... (관련된 변경 내용 없음)
+  LabProject.cpp
+GameFramework.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/INCREMENTAL:NO' 사양으로 인해 무시됩니다.
+  LabProject.vcxproj -> C:\Users\희동\Desktop\3학기\3D프로그래밍\곤줄박이\Software Renderer\LabProject(DirectXMath)\Debug\LabProject.exe

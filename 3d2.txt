@@ -1,0 +1,17 @@
+m_xmf3CameraOffset = XMFLOAT3(0.0f, 0.0f, 0.0f);	//플레이어와 카메라 사이의 갭
+	m_xmf3Velocity = XMFLOAT3(0.0f, 0.0f, 0.0f);	//물리에서 배우는 데 운동에너지
+
+void CGameObject::Animate(float fElapsedTime)
+{
+	if (m_fRotationSpeed != 0.0f) Rotate(m_xmf3RotationAxis, m_fRotationSpeed * fElapsedTime);
+	if (m_fMovingSpeed != 0.0f) Move(m_xmf3MovingDirection, m_fMovingSpeed * fElapsedTime);
+	
+	if (m_pMesh)
+	{
+		m_pMesh->m_xmOOBB.Transform(m_xmOOBB, XMLoadFloat4x4(&m_xmf4x4World));
+		XMStoreFloat4(&m_xmOOBB.Orientation, XMQuaternionNormalize(XMLoadFloat4(&m_xmOOBB.Orientation)));	//사원수는 노멀화 해야 회전으로 쓸수 있음 load는 xmvector로 store는 xmfloat으로 저장하고 빼줌
+왜냐 16바이트 정렬으로 xmvector 쓰는거
+	}
+}
+
+m_pCamera->SetLookAt(Vector3::Add(m_xmf3Position, m_xmf3CameraOffset), m_xmf3Position, m_xmf3Up); //카메라가 볼곳

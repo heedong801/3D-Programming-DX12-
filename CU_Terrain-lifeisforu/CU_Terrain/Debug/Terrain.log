@@ -1,0 +1,30 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Common.props(144,5): warning MSB4211: "WindowsTargetPlatformVersion" 속성에 처음으로 값이 설정되고 있지만 이미 "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.WindowsSDK.props(29,5)"에서 사용되었습니다.
+  stdafx.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CWorldTransform.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CVertexBuffer.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CUtility.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CTriangleStripPlane.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CTimer.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CTerrain.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CMesh.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CInput.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CIndexBuffer.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CGraphics.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CGameApp.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CFramework.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CFont.cpp
+d:\3학기\3d프로그래밍\cu_terrain-lifeisforu\cu_terrain\include\stdafx.h(24): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  코드를 생성하고 있습니다...

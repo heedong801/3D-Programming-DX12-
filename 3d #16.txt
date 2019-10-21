@@ -1,0 +1,76 @@
+5/1
+ID3D12DescriptorHeap
+
+디스크립터를 담을 수 있는 디스크립터포인터들의 배열 = 디스크립터 힙( 배열 모양의 메모리 )
+
+힙에서 시작주소를 가져오기 위한 함수는 CPU용과 GPU용이 있음
+시작주소와 인크리먼트 사이즈를 알면 다음 것을 가리킬수 있음
+
+뷰를 만들기전에 디스크립터 힙을 먼저 만들어야 한다.
+렌더타겟이 2개가 필요하면 NumDescriptors를 2로..
+
+렌더타겟을 사용학 위한 디스크립터를 생성해서 DestDescripor로 넣는다?
+
+뎁스스탠실뷰는 - 뎁스버퍼로도 사용하고, 스탠실버퍼로도 사용 이 버퍼에 대한 뷰는 뎁스스탠실뷰
+
+비디오메모리에 후면버퍼랑 똑같은 크기의 버퍼를 만들어야함
+비디오메모리에 할당받기 위한 함수
+CreateCommitedRe..
+
+**ppvResource 포인트로 메모리를 나타내는 콤객체 리턴?
+
+비디오 메모리는 기본적으로 3타입이 있는데 Default는 GPU가 사용 데이터에 접근(읽기와 쓰기 가능)한다는 얘기(대부분 이렇게 생성)
+만약 둘다 사용가능 하다면 동기화에 문제가 생김
+
+Uproad는 Cpu가 비디오메모리에 쓰는 과정으로 read는 못하는데 write는 가능, only cpu가 비디오메모리에 write하는 용도로 Gpu는 사용불가
+
+2가지 타입의 힙을 써야함
+첫째로 default타입으로 생성 cpu가 쓸수 없으니까 upload를 만듬 cpu는 비디오 메모리에 쓰고 copy함수로 dafault로 옮김
+그리고 gpu는 default 를 읽어서 그림
+cpu가 비디오메모리에 쓰는경우가 읽어가는 경우(ex 캡처)보다 많으니까 쓰는 경우에 해당되는 경로를 늘려서 쓰는 게 읽는 것보다 훨씬 빠름
+읽을 때는 readback을 만들어놓고 default를 readback에 복사를 하고 그걸 읽어감
+
+ex) mesh데이터의 경우 자주 쓰기 때문에 cpu가 upload에 넣고 upload를 default에 복사 그리고 upload는 이제 삭제 이렇게 씀
+
+CPU_PAGE_PROPERTY // UNKNOWN을 쓰면됨
+MEMORY_POOL // UNKNOWN을 쓰면 됨
+HEAP_TYPE은 꼭 정해주기
+
+
+Clear_Value란 ?
+ex)뎁스버퍼를 만들면 처음에 가장 먼 뎁스값이 1로 초기화 해주는 역할을 해주여야함
+비디오 메모리는 이걸 클리어해주는 것을 제공해줌(초기화 과정이 빨리 일어나도록 준비함)
+
+
+Resource_states	리소스생성시 초기상태 지정
+common=일반적인 상태
+
+어떤 리소스를 읽는 중인데 그 중에 쓰기가 되면 안되므로 리소스 역시 읽기 상태를 만들어줘야함
+
+
+CreateCommiittedResource()
+Dimension 버퍼 or 텍스처
+Alighment 위 변수를 크기에 맞게
+DepthOrArraySize 얘를 사용하여 리소스 차원 표현 가능
+Miplevels 버퍼이면 안써서 0, 텍스처 0일경우는 자동계산
+SampletDesc 버퍼는 안씀, 텍스쳐 다중샘플링할건가?
+Resource flag 리소스의 사용용도
+-Render Target : 렌더타겟뷰용
+-Depth Stencil : 뎁스스탠실버퍼용
+
+렌더 타겟 뷰 (서술사) 생성
+
+CreateDepthStencilView 전에 어떤 주소가 디스크립을 가리키게 해야하니까 GetCPUDes...를 먼저 해줘야 한다.
+
+버퍼와 깊이 - 스텐실 버퍼 초기화
+RenderTargetView
+렌더 타겟은 한순간에 최대로 8개까지 만들수 있음.
+첫번째 매개변수로, 디스크립터힙에서 디스크립터를 받아서 지움
+두번째 매개변수로, 이 색상으로 초기화
+네번째를 null로 지우면 렌더타겟 다 지움 부분적으로 지우려면 개수와 그 배열에 해당되는 것들을 배열로 해서 지움
+
+DepthStencilView 역시 같음
+
+파이프라인에 연결
+DepthStencilDescriptor는 1개, 렌더타겟 서술자들의 배열에는 여러개가 들어 갈 수 있고, 여러개일경우 배열로 하거나, 아니면 아래 변수값을
+True로 하고, 시작주소만 줄수 있음

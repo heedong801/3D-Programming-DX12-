@@ -1,0 +1,5 @@
+﻿  GameFramework.cpp
+d:\3학기\3d프로그래밍\win32project9\windowsproject13\gameframework.cpp(343): warning C4244: '인수': 'WPARAM'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Player.cpp
+  코드를 생성하고 있습니다...
+  WindowsProject13.vcxproj -> D:\3학기\3D프로그래밍\Win32Project9\x64\Debug\WindowsProject13.exe

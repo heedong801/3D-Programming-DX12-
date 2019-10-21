@@ -1,0 +1,18 @@
+﻿  stdafx.cpp
+  3DProject3.cpp
+  Camera.cpp
+  GameFramework.cpp
+  Mesh.cpp
+  Object.cpp
+  Player.cpp
+  Scene.cpp
+d:\3학기\3d프로그래밍\과제3\3d게임3 과제03(김희동-2013182017)\3dproject3\scene.cpp(524): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Shader.cpp
+d:\3학기\3d프로그래밍\과제3\3d게임3 과제03(김희동-2013182017)\3dproject3\shader.cpp(520): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\3학기\3d프로그래밍\과제3\3d게임3 과제03(김희동-2013182017)\3dproject3\shader.cpp(523): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\3학기\3d프로그래밍\과제3\3d게임3 과제03(김희동-2013182017)\3dproject3\shader.cpp(562): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\3학기\3d프로그래밍\과제3\3d게임3 과제03(김희동-2013182017)\3dproject3\shader.cpp(567): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\3학기\3d프로그래밍\과제3\3d게임3 과제03(김희동-2013182017)\3dproject3\shader.cpp(575): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Timer.cpp
+  코드를 생성하고 있습니다...
+  3DProject3.vcxproj -> D:\3학기\3D프로그래밍\과제3\3D게임3 과제03(김희동-2013182017)\x64\Debug\3DProject3.exe

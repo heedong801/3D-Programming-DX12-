@@ -1,0 +1,9 @@
+add 연산을 하는데 굳이 float 로 받아서 vectro로 변경하여 연산하고 다시 float3으로 저장하는지?
+inline XMFLOAT3 Add(const XMFLOAT3& xmf3Vector1, const XMFLOAT3& xmf3Vector2)
+	{
+		XMFLOAT3 xmf3Result;
+		XMStoreFloat3(&xmf3Result, XMLoadFloat3(&xmf3Vector1) + XMLoadFloat3(&xmf3Vector2));
+		return(xmf3Result);
+	}
+
+클래스형식이 아닌 이름공간형식

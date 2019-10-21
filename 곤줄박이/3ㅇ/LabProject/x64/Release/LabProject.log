@@ -1,0 +1,23 @@
+﻿  stdafx.cpp
+  Camera.cpp
+  GameFramework.cpp
+c:\users\희동\desktop\3학기\3d프로그래밍\곤줄박이\3ㅇ\labproject\gameframework.cpp(240): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\희동\desktop\3학기\3d프로그래밍\곤줄박이\3ㅇ\labproject\gameframework.cpp(241): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\희동\desktop\3학기\3d프로그래밍\곤줄박이\3ㅇ\labproject\gameframework.cpp(310): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\희동\desktop\3학기\3d프로그래밍\곤줄박이\3ㅇ\labproject\gameframework.cpp(311): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GameObject.cpp
+  LabProject.cpp
+  Mesh.cpp
+  Player.cpp
+  Scene.cpp
+c:\users\희동\desktop\3학기\3d프로그래밍\곤줄박이\3ㅇ\labproject\scene.cpp(152): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\희동\desktop\3학기\3d프로그래밍\곤줄박이\3ㅇ\labproject\scene.cpp(209): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\희동\desktop\3학기\3d프로그래밍\곤줄박이\3ㅇ\labproject\scene.cpp(641): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\희동\desktop\3학기\3d프로그래밍\곤줄박이\3ㅇ\labproject\scene.cpp(643): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\희동\desktop\3학기\3d프로그래밍\곤줄박이\3ㅇ\labproject\scene.cpp(645): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\희동\desktop\3학기\3d프로그래밍\곤줄박이\3ㅇ\labproject\scene.cpp(647): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Timer.cpp
+  코드를 생성하고 있습니다.
+  All 269 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  LabProject.vcxproj -> C:\Users\희동\Desktop\3학기\3D프로그래밍\곤줄박이\3ㅇ\x64\Release\LabProject.exe
